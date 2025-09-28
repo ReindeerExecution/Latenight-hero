@@ -7,56 +7,62 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className='container mt-12'>
-      <div className='text-center mb-12'>
-        <h1 className='h1 mb-4'>Contact Late Night Hero</h1>
-        <p className='text-lg text-white/80'>
-          24/7 dispatch service for luxury black car transportation.
-        </p>
-      </div>
-
-      <section className='grid gap-8 md:grid-cols-3 mb-16'>
-        <div className='card p-8 text-center'>
-          <h2 className='h3 mb-4'>24/7 Dispatch</h2>
-          <a href='tel:+17734308011' className='text-2xl font-bold text-brand-purple hover:text-white'>
-            (773) 430-8011
-          </a>
-          <p className='text-white/70 text-sm mt-2'>Call or text anytime</p>
-        </div>
-
-        <div className='card p-8 text-center'>
-          <h2 className='h3 mb-4'>Email</h2>
-          <a href='mailto:nurallababidi@gmail.com' className='text-lg text-brand-purple hover:text-white break-all'>
-            nurallababidi@gmail.com
-          </a>
-          <p className='text-white/70 text-sm mt-2'>Response within 2-4 hours</p>
-        </div>
-        <div className='card p-8 text-center'>
-          <h2 className='h3 mb-4'>WhatsApp</h2>
-          <a href='https://wa.me/17734308011' className='text-lg text-brand-purple hover:text-white' target='_blank' rel='noopener noreferrer'>
-            Message Us
-          </a>
-          <p className='text-white/70 text-sm mt-2'>Quick booking requests</p>
-        </div>
-      </section>
-
-      <section className='mb-16'>
-        <div className='card p-8 text-center bg-gradient-to-r from-brand-purple/10 to-brand-purple/5'>
-          <h2 className='h2 mb-4'>Want to Join Our Team?</h2>
-          <p className='text-lg text-white/80 mb-6'>
-            We&apos;re expanding! Looking for professional drivers with SUVs or sedans throughout the Chicago area. Perfect for night shifts and excellent income.
+    <>
+      <section className='bg-gradient-to-br from-brand-purple via-purple-800 to-slate-900 text-white pt-32 pb-16'>
+        <div className='container max-w-4xl text-center'>
+          <h1 className='display-sm mb-4 text-white'>Contact Late Night Hero</h1>
+          <p className='large text-purple-100 max-w-2xl mx-auto'>
+            24/7 dispatch service for luxury black car transportation. 
+            Ready to serve you anywhere in Chicago.
           </p>
-          <div className='flex flex-wrap justify-center gap-4'>
-            <Link href='/careers' className='btn btn-primary text-lg px-8 py-3'>
-              Apply Now
-            </Link>
-            <a href='tel:+17734308011' className='btn btn-outline text-lg px-8 py-3'>
-              Call to Discuss
-            </a>
-          </div>
-          <p className='text-white/70 text-sm mt-4'>All Chicago suburbs welcome  Flexible schedules</p>
         </div>
       </section>
-    </main>
+
+      <section className='py-16 bg-gradient-to-b from-gray-900 via-slate-800 to-gray-900'>
+        <div className='container max-w-6xl'>
+          <div className='grid gap-8 md:grid-cols-3 mb-16'>
+            <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 text-center shadow-lg border border-purple-400/30'>
+              <h2 className='h3 mb-4 text-white'>24/7 Dispatch</h2>
+              <a href='tel:+17734308011' className='text-2xl font-bold text-purple-400 hover:text-white transition-colors'>
+                (773) 430-8011
+              </a>
+              <p className='text-gray-400 text-sm mt-2'>Call or text anytime</p>
+            </div>
+
+            <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 text-center shadow-lg border border-purple-400/30'>
+              <h2 className='h3 mb-4 text-white'>Email</h2>
+              <a href='mailto:nurallababidi@gmail.com' className='text-lg text-purple-400 hover:text-white transition-colors break-all'>
+                nurallababidi@gmail.com
+              </a>
+              <p className='text-gray-400 text-sm mt-2'>Response within 2-4 hours</p>
+            </div>
+            
+            <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 text-center shadow-lg border border-purple-400/30'>
+              <h2 className='h3 mb-4 text-white'>WhatsApp</h2>
+              <a href='https://wa.me/17734308011' className='text-lg text-purple-400 hover:text-white transition-colors' target='_blank' rel='noopener noreferrer'>
+                Message Us
+              </a>
+              <p className='text-gray-400 text-sm mt-2'>Quick booking requests</p>
+            </div>
+          </div>
+
+          <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 text-center shadow-lg border border-purple-400/30'>
+            <h2 className='h2 mb-4 text-white'>Want to Join Our Team?</h2>
+            <p className='text-lg text-gray-300 mb-6'>
+              We&apos;re expanding! Looking for professional drivers with SUVs or sedans throughout the Chicago area. Perfect for night shifts and excellent income.
+            </p>
+            <div className='flex flex-wrap justify-center gap-4'>
+              <Link href='/careers' className='bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg'>
+                Apply Now
+              </Link>
+              <a href='tel:+17734308011' className='bg-gray-700 hover:bg-gray-600 border border-purple-400/30 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg'>
+                Call to Discuss
+              </a>
+            </div>
+            <p className='text-gray-400 text-sm mt-4'>All Chicago suburbs welcome • Flexible schedules</p>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

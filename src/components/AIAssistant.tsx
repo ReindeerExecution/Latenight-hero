@@ -109,7 +109,7 @@ Just tell me your pickup address and where you're going - I'll give you the EXAC
     }
   }, [])
 
-  const generatePricing = useCallback((routeInfo: RouteInfo) => {
+  const generatePricing = useCallback((routeInfo: RouteInfo, vehicleType: string = 'sedan') => {
     const { distance, duration, destination } = routeInfo
     
     // Check if we have a flat rate for this destination
@@ -121,13 +121,23 @@ Just tell me your pickup address and where you're going - I'll give you the EXAC
     
     if (flatRate && flatRate.fare) {
       // Flat rate calculation
-      const base = flatRate.fare
+      let base = flatRate.fare
+      
+      // Add 25% surcharge for Premium SUV (Ford Expedition)
+      if (vehicleType === 'suv' || vehicleType === 'expedition') {
+        base = base * 1.25
+      }
+      
       const withTax = base * (1 + ILLINOIS_TAX_RATE)
       const withTip = withTax * 1.2 // 20% tip
       
+      const vehicleNote = vehicleType === 'suv' || vehicleType === 'expedition' 
+        ? '🚐 **Ford Expedition SUV** (+25% premium surcharge)\n' 
+        : '🚗 **Lincoln MKZ Sedan**\n'
+      
       pricing = `🎯 **FLAT RATE TO ${destination.toUpperCase()}**
 
-💰 **Base Price:** ${formatUSD(base)}
+${vehicleNote}💰 **Base Price:** ${formatUSD(flatRate.fare)}${vehicleType === 'suv' || vehicleType === 'expedition' ? `\n💎 **Premium SUV Surcharge (25%):** ${formatUSD(base - flatRate.fare)}\n🏆 **SUV Base Total:** ${formatUSD(base)}` : ''}
 📊 **With Tax (11%):** ${formatUSD(withTax)}
 💎 **With Tip (20%):** ${formatUSD(withTip)}
 
@@ -135,15 +145,27 @@ Just tell me your pickup address and where you're going - I'll give you the EXAC
     } else {
       // Metered calculation using actual calculator logic
       const meteredResult = calculateMeteredFare(distance, duration, ILLINOIS_TAX_RATE)
-      const tip = meteredResult.base * 0.2
-      const total = meteredResult.total + tip
+      let adjustedBase = meteredResult.base
+      
+      // Add 25% surcharge for Premium SUV
+      if (vehicleType === 'suv' || vehicleType === 'expedition') {
+        adjustedBase = meteredResult.base * 1.25
+      }
+      
+      const adjustedWithTax = adjustedBase * (1 + ILLINOIS_TAX_RATE)
+      const tip = adjustedBase * 0.2
+      const total = adjustedWithTax + tip
+      
+      const vehicleNote = vehicleType === 'suv' || vehicleType === 'expedition' 
+        ? '🚐 **Ford Expedition SUV** (+25% premium surcharge)\n' 
+        : '🚗 **Lincoln MKZ Sedan**\n'
       
       pricing = `📏 **METERED RATE TO ${destination.toUpperCase()}**
 
-📍 **Distance:** ${distance} miles
+${vehicleNote}📍 **Distance:** ${distance} miles
 ⏱️ **Time:** ${duration} minutes
-💰 **Base Fare:** ${formatUSD(meteredResult.base)}
-📊 **With Tax:** ${formatUSD(meteredResult.total)}
+💰 **Base Fare:** ${formatUSD(meteredResult.base)}${vehicleType === 'suv' || vehicleType === 'expedition' ? `\n� **Premium SUV Surcharge (25%):** ${formatUSD(adjustedBase - meteredResult.base)}\n🏆 **SUV Base Total:** ${formatUSD(adjustedBase)}` : ''}
+📊 **With Tax:** ${formatUSD(adjustedWithTax)}
 💎 **With Tip (20%):** ${formatUSD(total)}
 
 ✅ **ESTIMATED TOTAL: ${formatUSD(total)}**`
@@ -170,7 +192,9 @@ Just tell me your pickup address and where you're going - I'll give you the EXAC
         
         const routeInfo = await calculateRoute(pickup, destination)
         if (routeInfo) {
-          const pricing = generatePricing(routeInfo)
+          const sedanPricing = generatePricing(routeInfo, 'sedan')
+          const suvPricing = generatePricing(routeInfo, 'suv')
+          
           response = `🚗 **ROUTE CALCULATED!**
 
 📍 **From:** ${pickup}
@@ -178,13 +202,17 @@ Just tell me your pickup address and where you're going - I'll give you the EXAC
 📏 **Distance:** ${routeInfo.distance} miles
 ⏱️ **Drive Time:** ${routeInfo.duration} minutes
 
-${pricing}
+🚗 **SEDAN PRICING:**
+${sedanPricing}
+
+🚐 **PREMIUM SUV PRICING:**
+${suvPricing}
 
 🔥 **WANT EHAB?** He's got that 30% discount and VIP service!
 📞 **Book Now:** (630) 400-5218
 📧 **Email:** defcon5ready@gmail.com
 
-Ready to book this ride? 🚀`
+Which vehicle do you prefer? 🚀`
         } else {
           response = `❌ **Couldn't calculate that route!**
 
@@ -212,10 +240,16 @@ I'll give you the exact price using our calculator! 💰`
       if (destination) {
         const routeInfo = await calculateRoute('O\'Hare Airport', destination)
         if (routeInfo) {
-          const pricing = generatePricing(routeInfo)
+          const sedanPricing = generatePricing(routeInfo, 'sedan')
+          const suvPricing = generatePricing(routeInfo, 'suv')
+          
           response = `💰 **PRICING FOR ${destination.toUpperCase()}**
 
-${pricing}
+🚗 **SEDAN OPTION:**
+${sedanPricing}
+
+🚐 **PREMIUM SUV OPTION:**
+${suvPricing}
 
 🎯 **Pro tip:** Ehab can do this ride with 30% off! He's the most popular driver in the USA for a reason! 
 
@@ -266,7 +300,7 @@ Where you headed? 🚗`
       response = `🚙 **VEHICLE LINEUP**
 
 🏆 **Lincoln MKZ Sedan** - Business class luxury
-🚐 **Ford Expedition SUV** - Groups & families  
+🚐 **Ford Expedition SUV** - Groups & families (+25% premium surcharge)
 🔥 **Honda CRV with Ehab** - 30% off + VIP service!
 
 **For you? Definitely the Honda CRV with Ehab!** 
@@ -274,9 +308,11 @@ Where you headed? 🚗`
 - Most popular driver in America
 - Perfect for baddies 😎
 
+**Need space?** Ford Expedition SUV has premium comfort but includes 25% surcharge for luxury service.
+
 📞 **Get Ehab:** (630) 400-5218
 
-What's your destination? I'll calculate the discounted price! 💰`
+What's your destination? I'll calculate both sedan and SUV pricing! 💰`
     }
     
     // Greetings and general help

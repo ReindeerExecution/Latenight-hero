@@ -6,47 +6,47 @@ export const metadata = {
 export default function BookEhabPage() {
   return (
     <>
-      <section className='bg-gradient-to-br from-purple-600 via-red-500 to-blue-600 text-white pt-32 pb-16'>
+      <section className='bg-gradient-to-br from-brand-purple via-purple-800 to-slate-900 text-white pt-32 pb-16'>
         <div className='container max-w-4xl text-center'>
           <div className='mb-8'>
             <h1 className='display-sm mb-6 text-white'>Oh, So You&apos;re Choosing Ehab as Your Driver, Huh?</h1>
-            <p className='large text-white/90 max-w-2xl mx-auto mb-8'>
+            <p className='large text-purple-100 max-w-2xl mx-auto mb-8'>
               Smart choice! You&apos;ve selected Chicago&apos;s most popular driver. 
               Let&apos;s get you set up with Ehab&apos;s premium Honda CRV service.
             </p>
-            <div className='inline-flex items-center gap-2 bg-red-600 text-white text-lg font-bold px-6 py-3 rounded-full shadow-lg animate-bounce'>
+            <div className='inline-flex items-center gap-2 bg-purple-600 text-white text-lg font-bold px-6 py-3 rounded-full shadow-lg animate-bounce'>
               🎉 30% OFF - Ehab Special Rate
             </div>
           </div>
         </div>
       </section>
 
-      <section className='py-16 bg-gradient-to-b from-white to-slate-50'>
+      <section className='py-16 bg-gradient-to-b from-gray-900 via-slate-800 to-gray-900'>
         <div className='container max-w-4xl'>
           <div className='grid gap-12 lg:grid-cols-2 items-start'>
             {/* Left side - Ehab info */}
             <div className='space-y-8'>
-              <div className='bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border-2 border-red-200'>
+              <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-purple-500 shadow-lg'>
                 <div className='text-center mb-6'>
-                  <div className='w-24 h-24 bg-red-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold'>
+                  <div className='w-24 h-24 bg-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold'>
                     E
                   </div>
-                  <h2 className='h2 text-gray-900 mb-2'>Your Driver: Ehab</h2>
-                  <p className='text-purple-600 font-semibold'>Chicago&apos;s Most Popular Driver</p>
+                  <h2 className='h2 text-white mb-2'>Your Driver: Ehab</h2>
+                  <p className='text-purple-400 font-semibold'>Chicago&apos;s Most Popular Driver</p>
                 </div>
                 
                 <div className='space-y-4'>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-red-500 rounded-full flex items-center justify-center'>
+                    <div className='w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center'>
                       <span className='text-white text-sm'>✓</span>
                     </div>
-                    <span className='text-gray-700'>Professional Honda CRV Service</span>
+                    <span className='text-gray-300'>Professional Honda CRV Service</span>
                   </div>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center'>
+                    <div className='w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center'>
                       <span className='text-white text-sm'>✓</span>
                     </div>
-                    <span className='text-gray-700'>5+ Years Experience</span>
+                    <span className='text-gray-300'>5+ Years Experience</span>
                   </div>
                   <div className='flex items-center gap-3'>
                     <div className='w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center'>
