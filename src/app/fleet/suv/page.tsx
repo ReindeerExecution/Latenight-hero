@@ -19,7 +19,7 @@ export default function SUVPage() {
       {/* Hero Section */}
       <div className='relative aspect-video rounded-xl overflow-hidden mb-12'>
         <Image
-          src='/expedition.jpg.png'
+          src='/expedition.jpg'
           alt='Ford Expedition SUV - Late Night Hero premium black SUV for group transportation'
           fill
           priority

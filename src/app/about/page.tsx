@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className='text-center'>
                 <div className='w-32 h-32 relative mx-auto mb-6 rounded-full overflow-hidden bg-brand-purple/20'>
                   <Image
-                    src='/Owner.jpg.png'
+                    src='/Owner.jpg'
                     alt='Nur Allababidi - Late Night Hero Founder and CEO'
                     fill
                     className='object-cover'

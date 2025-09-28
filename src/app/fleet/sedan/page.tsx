@@ -19,7 +19,7 @@ export default function SedanPage() {
       {/* Hero Image */}
       <div className='relative aspect-video rounded-xl overflow-hidden mb-12'>
         <Image
-          src='/mkz.jpg.png'
+          src='/mkz.jpg'
           alt='Lincoln MKZ luxury sedan exterior at night'
           fill
           priority

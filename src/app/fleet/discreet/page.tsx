@@ -23,7 +23,7 @@ export default function DiscreetService() {
             <div>
               <div className='relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl'>
                 <Image 
-                  src='/honda.jpg.png' 
+                  src='/honda.jpg' 
                   alt='Discreet Honda CRV for private transportation' 
                   fill 
                   className='object-cover' 

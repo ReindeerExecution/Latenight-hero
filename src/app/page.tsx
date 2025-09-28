@@ -40,7 +40,7 @@ export default function Page() {
         <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           <Link href='/fleet/sedan' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
             <div className='relative h-40'>
-              <Image src='/mkz.jpg.png' alt='Black sedan exterior at night' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
+              <Image src='/mkz.jpg' alt='Black sedan exterior at night' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
@@ -59,7 +59,7 @@ export default function Page() {
               -30% OFF
             </div>
             <div className='relative h-40'>
-              <Image src='/honda.jpg.png' alt='Discreet Honda CRV for private transportation' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
+              <Image src='/honda.jpg' alt='Discreet Honda CRV for private transportation' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
