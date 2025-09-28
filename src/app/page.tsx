@@ -22,7 +22,7 @@ export default function Page() {
           <div className='card p-4'>
             <div className='relative aspect-video'>
               <Image
-                src='/mkz.jpg.png'
+                src='/mkz.jpg'
                 alt='Late Night Hero black sedan at night in Oak Brook parking lot'
                 fill
                 priority
