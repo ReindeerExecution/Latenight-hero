@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import BookingForm from '@/components/BookingForm'
 
 export const metadata = {
@@ -16,7 +17,16 @@ export default function SUVPage() {
       </div>
 
       {/* Hero Section */}
-      <div className='relative aspect-video rounded-xl overflow-hidden mb-12 bg-gradient-to-br from-gray-800 to-gray-900'>
+      <div className='relative aspect-video rounded-xl overflow-hidden mb-12'>
+        <Image
+          src='/expedition.jpg.jpg'
+          alt='Ford Expedition SUV - Late Night Hero premium black SUV for group transportation'
+          fill
+          priority
+          className='object-cover'
+          sizes='(max-width: 800px) 100vw, 80vw'
+        />
+        <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent'></div>
         <div className='absolute inset-0 flex items-center justify-center'>
           <div className='text-center'>
             <div className='w-24 h-24 bg-brand-purple/20 rounded-full mx-auto mb-6 flex items-center justify-center'>

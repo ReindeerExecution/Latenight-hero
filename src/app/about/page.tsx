@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const metadata = {
   title: 'About Nur Allababidi - Late Night Hero Founder',
   description: 'Meet Nur Allababidi, biochemistry degree holder who built Late Night Hero from nothing. 8 years of business, 2000+ happy customers, Chicago area luxury transportation.'
@@ -38,10 +40,14 @@ export default function AboutPage() {
             </div>
             <div className='card p-8 bg-gradient-to-br from-brand-purple/10 to-purple-900/5'>
               <div className='text-center'>
-                <div className='w-24 h-24 bg-brand-purple/20 rounded-full flex items-center justify-center mx-auto mb-6'>
-                  <svg className='w-12 h-12 text-brand-purple' fill='currentColor' viewBox='0 0 20 20'>
-                    <path fillRule='evenodd' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z' clipRule='evenodd' />
-                  </svg>
+                <div className='w-32 h-32 relative mx-auto mb-6 rounded-full overflow-hidden bg-brand-purple/20'>
+                  <Image
+                    src='/nur-photo.jpg'
+                    alt='Nur Allababidi - Late Night Hero Founder and CEO'
+                    fill
+                    className='object-cover'
+                    sizes='128px'
+                  />
                 </div>
                 <h3 className='h3 mb-4'>Nur Allababidi</h3>
                 <p className='text-brand-purple font-medium mb-2'>Founder & CEO</p>

@@ -37,10 +37,10 @@ export default function Page() {
 
       <section id='fleet' className='container my-16' aria-label='Fleet'>
         <div className='h2 mb-6'>Our Fleet</div>
-        <div className='grid gap-6 sm:grid-cols-3'>
+        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           <Link href='/fleet/sedan' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
             <div className='relative h-40'>
-              <Image src='/mkz.jpg.png' alt='Black sedan exterior at night' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 100vw, 33vw' />
+              <Image src='/mkz.jpg.png' alt='Black sedan exterior at night' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
@@ -53,6 +53,20 @@ export default function Page() {
             <div className='h3 mb-1'>Ford Expedition SUV</div>
             <div className='small'>Black SUV available soon • Up to 6 passengers</div>
             <div className='text-xs text-yellow-400 mt-2'>Coming Soon →</div>
+          </Link>
+          <Link href='/fleet/discreet' className='card p-0 overflow-hidden hover:scale-105 transition-transform group border-red-500/30 relative'>
+            <div className='absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-lg'>
+              -30% OFF
+            </div>
+            <div className='relative h-40'>
+              <Image src='/honda.jpg.png' alt='Discreet Honda CRV for private transportation' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
+              <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
+            </div>
+            <div className='p-5'>
+              <div className='h3 mb-1'>Discreet Service</div>
+              <div className='small'>Honda CRV • Ehab will pick you up</div>
+              <div className='text-xs text-red-400 mt-2'>30% Off Special →</div>
+            </div>
           </Link>
           <Link href='/fleet/meet-greet' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
             <div className='relative h-40 bg-gradient-to-br from-gray-800 to-gray-900'>
