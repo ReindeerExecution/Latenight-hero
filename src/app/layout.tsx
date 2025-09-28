@@ -50,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href='/ohare' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label="O'Hare page">O&#39;Hare</a>
               <a href='/fleet' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Fleet page'>Fleet</a>
               <a href='/rates' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Rates page'>Rates</a>
+              <a href='/careers' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Careers page'>Careers</a>
               <a href='/faq' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='FAQ page'>FAQ</a>
               <a href='/contact' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Contact page'>Contact</a>
             </div>
@@ -59,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <StickyCTA />
         <footer className='mt-24 border-t border-white/10'>
-          <div className='container py-10 text-white/70 text-sm grid gap-6 sm:grid-cols-3'>
+          <div className='container py-10 text-white/70 text-sm grid gap-6 sm:grid-cols-4'>
             <div>
               <div className='font-bold text-white'>Late Night Hero Black Car</div>
               <p>Syrian-owned • Oak Brook & O&#39;Hare • Chicago.</p>
@@ -69,6 +70,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p>24/7 dispatch: <a href='tel:+17734308011' className='underline'>+1 (773) 430-8011</a></p>
               <p>Email: <a className='underline' href='mailto:nurallababidi@gmail.com'>nurallababidi@gmail.com</a></p>
               <p>Text/WhatsApp welcome.</p>
+            </div>
+            <div>
+              <div className='font-semibold text-white'>Join Our Team</div>
+              <p><a href='/careers' className='underline hover:text-white'>Driver opportunities</a></p>
+              <p>Night shifts available</p>
+              <p>Chicago area expansion</p>
             </div>
             <div>
               <div className='font-semibold text-white'>Insurance & Safety</div>
