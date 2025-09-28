@@ -61,7 +61,7 @@ export default function RatesPage(){
   return (
     <main className='container mt-12' id='main'>
       <h1 className='h1 mb-4'>Rates & Pricing</h1>
-      <p className='text-white/80 max-w-2xl'>Flat pricing from O\'Hare at ${OHARE_PER_MILE_RATE.toFixed(2)}/mile + Illinois sales tax ({(ILLINOIS_TAX_RATE*100).toFixed(0)}%). A 20% tip is required and added on top of the total below. Dispatcher confirms exact price before pickup.</p>
+      <p className='text-white/80 max-w-2xl'>Flat pricing from O&apos;Hare at ${OHARE_PER_MILE_RATE.toFixed(2)}/mile + Illinois sales tax ({(ILLINOIS_TAX_RATE*100).toFixed(0)}%). A 20% tip is required and added on top of the total below. Dispatcher confirms exact price before pickup.</p>
       <div className='mt-8'>
         <h2 className='h3 mb-3'>Instant Calculator</h2>
         <FareCalculator defaultMode='upfront' defaultTaxRatePct={(ILLINOIS_TAX_RATE*100).toFixed(0)} />
@@ -69,7 +69,7 @@ export default function RatesPage(){
 
       <div className='mt-12 overflow-x-auto rounded-xl border border-white/10'>
         <table className='w-full text-sm'>
-          <caption className='sr-only'>O'Hare to suburb flat rates with tax (tip excluded)</caption>
+          <caption className='sr-only'>O&apos;Hare to suburb flat rates with tax (tip excluded)</caption>
           <thead className='bg-white/5 text-white/70'>
             <tr>
               <th className='text-left px-4 py-2'>Suburb</th>

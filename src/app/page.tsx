@@ -21,7 +21,7 @@ export default function Page() {
           <div className='card p-4'>
             <div className='relative aspect-video'>
               <Image
-                src='/mkz.jpg'
+                src='/mkz.jpg.png'
                 alt='Late Night Hero black sedan at night in Oak Brook parking lot'
                 fill
                 priority
@@ -39,7 +39,7 @@ export default function Page() {
         <div className='grid gap-6 sm:grid-cols-3'>
           <div className='card p-0 overflow-hidden'>
             <div className='relative h-40'>
-              <Image src='/mkz.jpg' alt='Black sedan exterior at night' fill className='object-cover' sizes='(max-width: 800px) 100vw, 33vw' />
+              <Image src='/mkz.jpg.png' alt='Black sedan exterior at night' fill className='object-cover' sizes='(max-width: 800px) 100vw, 33vw' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
