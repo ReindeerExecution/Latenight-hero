@@ -44,15 +44,15 @@ export default function Page() {
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
-              <div className='h3 mb-1'>Black Sedan</div>
+              <div className='h3 mb-1'>Sedan</div>
               <div className='small'>2–3 passengers • Business-class comfort</div>
               <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
             </div>
           </Link>
-          <Link href='/fleet/suv' className='card p-5 hover:scale-105 transition-transform group border-yellow-500/30'>
-            <div className='h3 mb-1'>Ford Expedition SUV</div>
-            <div className='small'>Black SUV available soon • Up to 6 passengers</div>
-            <div className='text-xs text-yellow-400 mt-2'>Coming Soon →</div>
+          <Link href='/fleet/suv' className='card p-5 hover:scale-105 transition-transform group'>
+            <div className='h3 mb-1'>Ford Expedition</div>
+            <div className='small'>Up to 6 passengers • Premium SUV service</div>
+            <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
           </Link>
           <Link href='/fleet/discreet' className='card p-0 overflow-hidden hover:scale-105 transition-transform group border-red-500/30 relative'>
             <div className='absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-lg'>
@@ -63,25 +63,19 @@ export default function Page() {
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
-              <div className='h3 mb-1'>Discreet Service</div>
-              <div className='small'>Honda CRV • Ehab will pick you up</div>
+              <div className='h3 mb-1'>Our Most Popular</div>
+              <div className='small'>Driver Ehab will be picking you up</div>
               <div className='text-xs text-red-400 mt-2'>30% Off Special →</div>
             </div>
           </Link>
-          <Link href='/fleet/meet-greet' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
-            <div className='relative h-40 bg-gradient-to-br from-gray-800 to-gray-900'>
-              <div className='absolute inset-0 flex items-center justify-center'>
-                <div className='w-16 h-16 bg-brand-purple/20 rounded-full flex items-center justify-center group-hover:bg-brand-purple/30 transition-colors'>
-                  <svg className='w-8 h-8 text-brand-purple' fill='currentColor' viewBox='0 0 20 20'>
-                    <path fillRule='evenodd' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z' clipRule='evenodd' />
-                  </svg>
-                </div>
-              </div>
+          <Link href='/about' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
+            <div className='relative h-40'>
+              <Image src='/Owner.jpg' alt='Nur Allababidi - Late Night Hero Founder' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
-              <div className='h3 mb-1'>Airport Meet & Greet</div>
-              <div className='small'>Driver with sign • Baggage assistance</div>
+              <div className='h3 mb-1'>Our Founder</div>
+              <div className='small'>Nur Allababidi • Built from nothing</div>
               <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
             </div>
           </Link>
