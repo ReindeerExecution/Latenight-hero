@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; }
+body { background:#0B0B0F; color:#fff; -webkit-font-smoothing:antialiased; }
+
+/* Fallback utility-style classes (avoid @apply if Tailwind not transforming yet) */
+.container { margin-left:auto; margin-right:auto; max-width:72rem; padding-left:1rem; padding-right:1rem; }
+.btn { display:inline-flex; align-items:center; justify-content:center; border-radius:0.75rem; padding:0.75rem 1.25rem; font-size:0.875rem; font-weight:600; line-height:1.25rem; transition:box-shadow .2s, background .2s; box-shadow:0 1px 2px rgba(0,0,0,.4); position:relative; }
+.btn:hover { box-shadow:0 4px 16px -4px rgba(0,0,0,.5),0 2px 6px -2px rgba(0,0,0,.4); }
+.btn-primary { background:#7E3AF2; color:#fff; }
+.btn-primary:hover { background:#6D28D9; }
+.btn-primary:focus { outline:2px solid rgba(126,58,242,.55); outline-offset:2px; }
+.btn-outline { border:1px solid rgba(126,58,242,.5); color:rgba(255,255,255,.95); }
+.btn-outline:hover { background:rgba(126,58,242,.08); }
+.card { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.05); border-radius:1rem; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); box-shadow:0 4px 16px -4px rgba(0,0,0,.4),0 2px 6px -2px rgba(0,0,0,.5); }
+.h1 { font-size:clamp(1.875rem,4vw,3rem); font-weight:800; letter-spacing:-.02em; }
+.h2 { font-size:clamp(1.5rem,3vw,2.25rem); font-weight:700; letter-spacing:-.01em; }
+.h3 { font-size:1.25rem; font-weight:600; }
+.small { font-size:.875rem; color:rgba(255,255,255,.7); }
+.fixed-cta { position:fixed; left:0; right:0; bottom:0; z-index:50; border-top:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.8); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+
+/* When Tailwind processes, utility classes override these; this keeps usable look before build works */
