@@ -19,12 +19,12 @@ export default function FleetPage(){
         </div>
       </section>
 
-      <section className='py-16 bg-gradient-to-b from-white to-slate-50'>
+      <section className='py-16 bg-gradient-to-b from-gray-900 via-slate-800 to-gray-900'>
         <div className='container max-w-6xl'>
           <div className='grid gap-12 lg:grid-cols-3'>
             
             {/* Lincoln MKZ Sedan */}
-            <div className='bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:shadow-3xl transition-shadow duration-300'>
+            <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-purple-400/30 hover:shadow-3xl hover:border-purple-400/50 transition-all duration-300'>
               <div className='relative h-64'>
                 <Image 
                   src='/mkz.jpg' 
@@ -33,50 +33,50 @@ export default function FleetPage(){
                   className='object-cover' 
                   sizes='(max-width: 800px) 100vw, 33vw'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-purple-900/20 to-transparent' />
                 <div className='absolute bottom-4 left-4'>
-                  <div className='bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-bold'>
+                  <div className='bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold'>
                     Premium Sedan
                   </div>
                 </div>
               </div>
               <div className='p-8'>
-                <h2 className='h2 mb-4 text-gray-900'>Lincoln MKZ</h2>
-                <p className='text-gray-600 mb-6 leading-relaxed'>
+                <h2 className='h2 mb-4 text-white'>Lincoln MKZ</h2>
+                <p className='text-gray-300 mb-6 leading-relaxed'>
                   Our flagship luxury sedan offers premium comfort for business executives and discerning travelers. 
                   Leather seating, climate control, and whisper-quiet ride quality.
                 </p>
                 
                 <div className='grid gap-4 mb-6'>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-brand-purple/20 rounded-full flex items-center justify-center'>
-                      <svg className='w-4 h-4 text-brand-purple' fill='currentColor' viewBox='0 0 20 20'>
+                    <div className='w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center'>
+                      <svg className='w-4 h-4 text-purple-400' fill='currentColor' viewBox='0 0 20 20'>
                         <path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
                       </svg>
                     </div>
-                    <span className='text-gray-700'>2-3 passengers</span>
+                    <span className='text-gray-300'>2-3 passengers</span>
                   </div>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-brand-purple/20 rounded-full flex items-center justify-center'>
-                      <svg className='w-4 h-4 text-brand-purple' fill='currentColor' viewBox='0 0 20 20'>
+                    <div className='w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center'>
+                      <svg className='w-4 h-4 text-purple-400' fill='currentColor' viewBox='0 0 20 20'>
                         <path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
                       </svg>
                     </div>
-                    <span className='text-gray-700'>Business-class comfort</span>
+                    <span className='text-gray-300'>Business-class comfort</span>
                   </div>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-brand-purple/20 rounded-full flex items-center justify-center'>
-                      <svg className='w-4 h-4 text-brand-purple' fill='currentColor' viewBox='0 0 20 20'>
+                    <div className='w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center'>
+                      <svg className='w-4 h-4 text-purple-400' fill='currentColor' viewBox='0 0 20 20'>
                         <path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
                       </svg>
                     </div>
-                    <span className='text-gray-700'>Premium luggage space</span>
+                    <span className='text-gray-300'>Premium luggage space</span>
                   </div>
                 </div>
 
                 <Link 
                   href='/fleet/sedan' 
-                  className='w-full bg-brand-purple hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center block'
+                  className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center block'
                 >
                   Learn More About Lincoln MKZ
                 </Link>
@@ -84,7 +84,7 @@ export default function FleetPage(){
             </div>
 
             {/* Ford Expedition SUV */}
-            <div className='bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:shadow-3xl transition-shadow duration-300'>
+            <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-purple-400/30 hover:shadow-3xl hover:border-purple-400/50 transition-all duration-300'>
               <div className='relative h-64'>
                 <Image 
                   src='/expedition.jpg' 
@@ -93,50 +93,50 @@ export default function FleetPage(){
                   className='object-cover' 
                   sizes='(max-width: 800px) 100vw, 33vw'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-purple-900/20 to-transparent' />
                 <div className='absolute bottom-4 left-4'>
-                  <div className='bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold'>
+                  <div className='bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold'>
                     Premium SUV
                   </div>
                 </div>
               </div>
               <div className='p-8'>
-                <h2 className='h2 mb-4 text-gray-900'>Ford Expedition</h2>
-                <p className='text-gray-600 mb-6 leading-relaxed'>
+                <h2 className='h2 mb-4 text-white'>Ford Expedition</h2>
+                <p className='text-gray-300 mb-6 leading-relaxed'>
                   Spacious luxury SUV perfect for groups, families, or when you need extra luggage capacity. 
                   Premium seating for up to 6 passengers with captain&apos;s chairs.
                 </p>
                 
                 <div className='grid gap-4 mb-6'>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center'>
-                      <svg className='w-4 h-4 text-green-600' fill='currentColor' viewBox='0 0 20 20'>
+                    <div className='w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center'>
+                      <svg className='w-4 h-4 text-purple-400' fill='currentColor' viewBox='0 0 20 20'>
                         <path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
                       </svg>
                     </div>
-                    <span className='text-gray-700'>Up to 6 passengers</span>
+                    <span className='text-gray-300'>Up to 6 passengers</span>
                   </div>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center'>
-                      <svg className='w-4 h-4 text-green-600' fill='currentColor' viewBox='0 0 20 20'>
+                    <div className='w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center'>
+                      <svg className='w-4 h-4 text-purple-400' fill='currentColor' viewBox='0 0 20 20'>
                         <path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
                       </svg>
                     </div>
-                    <span className='text-gray-700'>Maximum luggage space</span>
+                    <span className='text-gray-300'>Maximum luggage space</span>
                   </div>
                   <div className='flex items-center gap-3'>
-                    <div className='w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center'>
-                      <svg className='w-4 h-4 text-green-600' fill='currentColor' viewBox='0 0 20 20'>
+                    <div className='w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center'>
+                      <svg className='w-4 h-4 text-purple-400' fill='currentColor' viewBox='0 0 20 20'>
                         <path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
                       </svg>
                     </div>
-                    <span className='text-gray-700'>Group transportation</span>
+                    <span className='text-gray-300'>Group transportation</span>
                   </div>
                 </div>
 
                 <Link 
                   href='/fleet/suv' 
-                  className='w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center block'
+                  className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center block'
                 >
                   Learn More About Ford Expedition
                 </Link>

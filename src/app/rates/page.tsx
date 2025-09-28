@@ -1,5 +1,6 @@
 import { OHARE_FLAT_RATES } from '@/data/ohareFlatRates'
 import FareCalculator from '@/components/FareCalculator'
+import AIAssistant from '@/components/AIAssistant'
 import { computeOhareFlat, formatUSD, ILLINOIS_TAX_RATE, OHARE_PER_MILE_RATE } from '@/lib/pricing'
 
 // Approximate mileage from O'Hare to each suburb (placeholder values where null fare exists)
@@ -95,6 +96,9 @@ export default function RatesPage(){
         </table>
       </div>
       <p className='small mt-3'>Miles are approximate typical driving distance, not guaranteed. Flat fares include tax; required 20% tip is additional. Waiting time, stops, tolls, or special requests may adjust final total.</p>
+      
+      {/* AI Assistant */}
+      <AIAssistant />
     </main>
   )
 }

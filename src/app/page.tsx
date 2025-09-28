@@ -1,4 +1,5 @@
 import BookingForm from '@/components/BookingForm'
+import AIAssistant from '@/components/AIAssistant'
 import Image from 'next/image'
 import Link from 'next/link'
 export const revalidate = 60
@@ -123,6 +124,9 @@ export default function Page() {
       </section>
 
       <BookingForm />
+      
+      {/* AI Assistant */}
+      <AIAssistant />
     </main>
   )
 }

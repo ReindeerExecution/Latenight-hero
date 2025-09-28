@@ -96,7 +96,11 @@ export default function FareCalculator({
         <div className='grid gap-3 sm:grid-cols-4'>
           <div className='sm:col-span-2'>
             <label className='small block mb-1'>Suburb (from O&#39;Hare)</label>
-            <select value={suburb} onChange={e=>setSuburb(e.target.value)} className='rounded-xl bg-white/5 p-3 outline-none border border-white/10 w-full'>
+                      <select 
+            value={suburb}
+            onChange={(e) => setSuburb(e.target.value)}
+            className="w-full px-4 py-2 bg-gray-800 border border-purple-400/30 rounded-lg text-white focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+          >
               {OHARE_FLAT_RATES.map(x=> (
                 <option key={x.suburb} value={x.suburb}>{x.suburb}</option>
               ))}
