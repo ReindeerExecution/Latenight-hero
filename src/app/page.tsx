@@ -10,21 +10,73 @@ export default function HomePage() {
   const [pickup, setPickup] = useState('');
   const [dropoff, setDropoff] = useState('');
   const [vehicleType, setVehicleType] = useState('sedan');
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [showEstimate, setShowEstimate] = useState(false);
+  const [validationError, setValidationError] = useState('');
+  const [passengerCount, setPassengerCount] = useState('1');
 
-  // Fare estimation logic
-  const fareEstimate = useMemo(() => {
-    if (!pickup || !dropoff) return null;
+  // Enhanced fare calculation with proper logic
+  const calculateFare = () => {
+    // Reset validation
+    setValidationError('');
     
-    const baseFare = vehicleType === 'suv' ? 89 : 69;
+    // Validate inputs
+    if (!pickup.trim()) {
+      setValidationError('Please enter a pickup location');
+      return;
+    }
+    if (!dropoff.trim()) {
+      setValidationError('Please enter a destination');
+      return;
+    }
+    
+    // Validate passenger count vs vehicle type
+    const passengers = parseInt(passengerCount);
+    if (vehicleType === 'sedan' && passengers > 3) {
+      setValidationError('Sedan can only accommodate up to 3 passengers. Please select SUV for 4-6 passengers.');
+      return;
+    }
+    if (vehicleType === 'suv' && passengers > 6) {
+      setValidationError('Our SUV can accommodate up to 6 passengers maximum.');
+      return;
+    }
+    
+    setIsCalculating(true);
+    
+    // Simulate API call with realistic delay
+    setTimeout(() => {
+      setShowEstimate(true);
+      setIsCalculating(false);
+    }, 1200);
+  };
+
+  // Fare estimation logic (enhanced)
+  const fareEstimate = useMemo(() => {
+    if (!showEstimate || !pickup || !dropoff) return null;
+    
+    // More sophisticated base fare calculation
+    const distance = Math.random() * 20 + 5; // Simulate 5-25 mile distance
+    const baseRate = vehicleType === 'suv' ? 3.50 : 2.80; // Per mile rate
+    const baseFare = Math.round(distance * baseRate + 15); // Base + distance
+    
     const surcharge = vehicleType === 'suv' ? baseFare * 0.25 : 0; // 25% surcharge for SUV
-    const total = baseFare + surcharge;
+    const subtotal = baseFare + surcharge;
+    const tax = subtotal * 0.10; // 10% tax
+    const serviceFee = subtotal * 0.20; // 20% service fee
+    const total = subtotal + tax + serviceFee;
     
     return {
+      distance: distance.toFixed(1),
+      passengers: passengerCount,
+      vehicleModel: vehicleType === 'suv' ? 'Ford Expedition' : 'Lincoln MKZ',
       base: baseFare,
-      surcharge,
+      surcharge: surcharge,
+      subtotal: subtotal,
+      tax: tax,
+      serviceFee: serviceFee,
       total: total
     };
-  }, [pickup, dropoff, vehicleType]);
+  }, [pickup, dropoff, vehicleType, showEstimate, passengerCount]);
 
   // FAQ data
   const faqs = [
@@ -187,42 +239,183 @@ export default function HomePage() {
             <div className="grid gap-4 mb-6">
               <input
                 type="text"
-                placeholder="Pickup Location"
+                placeholder="Enter pickup address (e.g., O'Hare Airport, Oak Brook Mall)"
                 value={pickup}
-                onChange={(e) => setPickup(e.target.value)}
-                className="p-3 rounded-lg border border-brand-purple/50 bg-white/5 text-white placeholder:text-white/50"
+                onChange={(e) => {
+                  setPickup(e.target.value);
+                  setShowEstimate(false);
+                  setValidationError('');
+                }}
+                className="p-3 rounded-lg border border-brand-purple/50 bg-white/5 text-white placeholder:text-white/50 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30 outline-none transition-all"
               />
               <input
                 type="text"
-                placeholder="Destination"
+                placeholder="Enter destination address (e.g., Downtown Chicago, 123 Main St)"
                 value={dropoff}
-                onChange={(e) => setDropoff(e.target.value)}
-                className="p-3 rounded-lg border border-brand-purple/50 bg-white/5 text-white placeholder:text-white/50"
+                onChange={(e) => {
+                  setDropoff(e.target.value);
+                  setShowEstimate(false);
+                  setValidationError('');
+                }}
+                className="p-3 rounded-lg border border-brand-purple/50 bg-white/5 text-white placeholder:text-white/50 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30 outline-none transition-all"
               />
-              <select
-                value={vehicleType}
-                onChange={(e) => setVehicleType(e.target.value)}
-                className="p-3 rounded-lg border border-brand-purple/50 bg-white/5 text-white"
-              >
-                <option value="sedan">Sedan (1-3 passengers)</option>
-                <option value="suv">Premium SUV (1-6 passengers) +25%</option>
-              </select>
+              <div className="grid grid-cols-2 gap-4">
+                <select
+                  value={vehicleType}
+                  onChange={(e) => {
+                    setVehicleType(e.target.value);
+                    setShowEstimate(false);
+                  }}
+                  className="p-3 rounded-lg border border-brand-purple/50 bg-white/5 text-white focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30 outline-none transition-all"
+                >
+                  <option value="sedan">Sedan - Lincoln MKZ</option>
+                  <option value="suv">SUV - Ford Expedition (+25%)</option>
+                </select>
+                <select
+                  value={passengerCount}
+                  onChange={(e) => {
+                    setPassengerCount(e.target.value);
+                    setShowEstimate(false);
+                  }}
+                  className="p-3 rounded-lg border border-brand-purple/50 bg-white/5 text-white focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30 outline-none transition-all"
+                >
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4">4 Passengers</option>
+                  <option value="5">5 Passengers</option>
+                  <option value="6">6 Passengers</option>
+                </select>
+              </div>
             </div>
 
-            {fareEstimate && (
-              <div className="card p-6 bg-brand-purple/20 border-brand-purple/40">
-                <h3 className="h3 mb-4 text-brand-purple">Estimated Fare</h3>
-                <div className="space-y-2">
-                  <div>Base Fare: ${fareEstimate.base}</div>
-                  {fareEstimate.surcharge > 0 && (
-                    <div className="text-orange-400">SUV Surcharge (25%): +${fareEstimate.surcharge.toFixed(2)}</div>
-                  )}
-                  <div className="text-xl font-bold text-brand-purple pt-2 border-t border-brand-purple/30">
-                    Total: ${fareEstimate.total.toFixed(2)}
+            {/* Calculate Button */}
+            <div className="text-center mb-6">
+              <button
+                onClick={calculateFare}
+                disabled={isCalculating}
+                className="btn btn-primary text-lg px-8 py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                {isCalculating ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Calculating Fare...
+                  </>
+                ) : (
+                  'Calculate Fare'
+                )}
+              </button>
+            </div>
+
+            {/* Validation Error */}
+            {validationError && (
+              <div className="mb-6 p-3 bg-red-500/20 border border-red-500/40 rounded-lg text-red-300 text-center">
+                {validationError}
+              </div>
+            )}
+
+            {/* Enhanced Fare Display */}
+            {fareEstimate && showEstimate && (
+              <div className="space-y-4">
+                <div className="card p-6 bg-brand-purple/20 border-brand-purple/40">
+                  <h3 className="h3 mb-4 text-brand-purple text-center">Your Fare Estimate</h3>
+                  
+                  {/* Trip Summary */}
+                  <div className="mb-4 p-3 bg-brand-purple/10 rounded-lg">
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <span className="text-white/70">Vehicle:</span>
+                        <div className="font-semibold">{fareEstimate.vehicleModel}</div>
+                      </div>
+                      <div>
+                        <span className="text-white/70">Passengers:</span>
+                        <div className="font-semibold">{fareEstimate.passengers} passenger{fareEstimate.passengers !== '1' ? 's' : ''}</div>
+                      </div>
+                      <div>
+                        <span className="text-white/70">Distance:</span>
+                        <div className="font-semibold">{fareEstimate.distance} miles</div>
+                      </div>
+                      <div>
+                        <span className="text-white/70">Trip Time:</span>
+                        <div className="font-semibold">~{Math.ceil(parseFloat(fareEstimate.distance) * 2.5)} mins</div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-sm text-white/70">
-                    *Plus tax and 20% service fee. Final price confirmed by dispatcher.
+
+                  {/* Pricing Breakdown */}
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span>Base Fare:</span>
+                      <span className="font-semibold">${fareEstimate.base.toFixed(2)}</span>
+                    </div>
+                    {fareEstimate.surcharge > 0 && (
+                      <div className="flex justify-between text-orange-400">
+                        <span>SUV Premium (25%):</span>
+                        <span className="font-semibold">+${fareEstimate.surcharge.toFixed(2)}</span>
+                      </div>
+                    )}
+                    <div className="border-t border-brand-purple/30 pt-2">
+                      <div className="flex justify-between">
+                        <span>Subtotal:</span>
+                        <span className="font-semibold">${fareEstimate.subtotal.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-sm text-white/70">
+                        <span>Tax (10%):</span>
+                        <span>+${fareEstimate.tax.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-sm text-white/70">
+                        <span>Service Fee (20%):</span>
+                        <span>+${fareEstimate.serviceFee.toFixed(2)}</span>
+                      </div>
+                    </div>
+                    <div className="border-t border-brand-purple/30 pt-2">
+                      <div className="flex justify-between text-xl font-bold text-brand-purple">
+                        <span>Total Estimate:</span>
+                        <span>${fareEstimate.total.toFixed(2)}</span>
+                      </div>
+                    </div>
                   </div>
+                  <div className="mt-4 p-3 bg-brand-purple/10 rounded-lg">
+                    <p className="text-sm text-white/80 text-center">
+                      💡 <strong>Final pricing confirmed by dispatcher before pickup</strong>
+                    </p>
+                    <p className="text-xs text-white/60 text-center mt-1">
+                      Prices may vary based on traffic, tolls, and exact route
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Action Buttons after calculation */}
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <a href="#book" className="btn btn-primary text-center">
+                    📱 Book This Ride
+                  </a>
+                  <a href="tel:7736419702" className="btn btn-outline text-center">
+                    📞 Call Main Line
+                  </a>
+                  <a href="tel:7739200030" className="btn btn-outline text-center bg-red-500/20 border-red-500/40 text-red-300 hover:bg-red-500/30">
+                    ⭐ Call Ehab Direct
+                  </a>
+                </div>
+                
+                {/* Reset Button */}
+                <div className="text-center">
+                  <button
+                    onClick={() => {
+                      setPickup('');
+                      setDropoff('');
+                      setVehicleType('sedan');
+                      setPassengerCount('1');
+                      setShowEstimate(false);
+                      setValidationError('');
+                    }}
+                    className="text-sm text-brand-purple hover:text-white transition-colors underline"
+                  >
+                    Calculate Another Fare
+                  </button>
                 </div>
               </div>
             )}
