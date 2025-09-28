@@ -37,7 +37,7 @@ export default function Page() {
 
       <section id='fleet' className='container my-16' aria-label='Fleet'>
         <div className='h2 mb-6'>Our Fleet</div>
-        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
           <Link href='/fleet/sedan' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
             <div className='relative h-40'>
               <Image src='/mkz.jpg' alt='Black sedan exterior at night' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
@@ -49,10 +49,16 @@ export default function Page() {
               <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
             </div>
           </Link>
-          <Link href='/fleet/suv' className='card p-5 hover:scale-105 transition-transform group'>
-            <div className='h3 mb-1'>Ford Expedition</div>
-            <div className='small'>Up to 6 passengers • Premium SUV service</div>
-            <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
+          <Link href='/fleet/suv' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
+            <div className='relative h-40'>
+              <Image src='/expedition.jpg' alt='Ford Expedition SUV for premium transportation' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 50vw, 25vw' />
+              <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
+            </div>
+            <div className='p-5'>
+              <div className='h3 mb-1'>Ford Expedition</div>
+              <div className='small'>Up to 6 passengers • Premium SUV service</div>
+              <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
+            </div>
           </Link>
           <Link href='/fleet/discreet' className='card p-0 overflow-hidden hover:scale-105 transition-transform group border-red-500/30 relative'>
             <div className='absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-lg'>
@@ -78,6 +84,11 @@ export default function Page() {
               <div className='small'>Nur Allababidi • Built from nothing</div>
               <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
             </div>
+          </Link>
+          <Link href='/careers' className='card p-5 hover:scale-105 transition-transform group border-yellow-500/30 bg-gradient-to-br from-yellow-900/10 to-orange-900/5'>
+            <div className='h3 mb-1 text-yellow-400'>Want Your Car Here?</div>
+            <div className='small'>Call or message us and tell us more about yourself</div>
+            <div className='text-xs text-yellow-400 mt-2'>Coming Soon →</div>
           </Link>
         </div>
       </section>
