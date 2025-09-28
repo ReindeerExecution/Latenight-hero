@@ -9,7 +9,7 @@ export default function CareersPage() {
       <div className='text-center mb-12'>
         <h1 className='h1 mb-4'>Join the Late Night Hero Team</h1>
         <p className='text-lg text-white/80 mb-6'>
-          We're expanding throughout the Chicago area and looking for professional drivers who want to be part of something special.
+          We&apos;re expanding throughout the Chicago area and looking for professional drivers who want to be part of something special.
         </p>
       </div>
 
@@ -31,7 +31,7 @@ export default function CareersPage() {
             </li>
             <li className='flex items-start gap-3'>
               <span className='text-brand-purple font-bold'></span>
-              <span>O'Hare airport runs and luxury hotel pickups</span>
+              <span>O&apos;Hare airport runs and luxury hotel pickups</span>
             </li>
             <li className='flex items-start gap-3'>
               <span className='text-brand-purple font-bold'></span>
@@ -72,7 +72,7 @@ export default function CareersPage() {
               <p className='text-white/70 text-sm'>Business district, hotels, events</p>
             </div>
             <div>
-              <h3 className='h4 mb-2'>O'Hare Airport</h3>
+              <h3 className='h4 mb-2'>O&apos;Hare Airport</h3>
               <p className='text-white/70 text-sm'>24/7 terminal service</p>
             </div>
             <div>
@@ -96,7 +96,7 @@ export default function CareersPage() {
               <ul className='space-y-3 text-white/90'>
                 <li className='flex items-start gap-3'>
                   <span className='text-green-400 font-bold'></span>
-                  <span>Valid Illinois driver's license (5+ years clean record)</span>
+                  <span>Valid Illinois driver&apos;s license (5+ years clean record)</span>
                 </li>
                 <li className='flex items-start gap-3'>
                   <span className='text-green-400 font-bold'></span>
@@ -142,7 +142,7 @@ export default function CareersPage() {
           <h2 className='h2 mb-6 text-center text-yellow-400'>Ready to Apply?</h2>
           <div className='text-center mb-8'>
             <p className='text-lg text-white/80 mb-4'>
-              Send us your information and we'll get back to you within 24 hours to discuss opportunities and schedule an interview.
+              Send us your information and we&apos;ll get back to you within 24 hours to discuss opportunities and schedule an interview.
             </p>
             <p className='text-white/70'>
               Email: <a href='mailto:nurallababidi@gmail.com?subject=Driver Application - Late Night Hero' className='text-brand-purple hover:text-white font-medium'>nurallababidi@gmail.com</a>

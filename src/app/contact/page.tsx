@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className='card p-8 text-center bg-gradient-to-r from-brand-purple/10 to-brand-purple/5'>
           <h2 className='h2 mb-4'>Want to Join Our Team?</h2>
           <p className='text-lg text-white/80 mb-6'>
-            We're expanding! Looking for professional drivers with SUVs or sedans throughout the Chicago area. Perfect for night shifts and excellent income.
+            We&apos;re expanding! Looking for professional drivers with SUVs or sedans throughout the Chicago area. Perfect for night shifts and excellent income.
           </p>
           <div className='flex flex-wrap justify-center gap-4'>
             <Link href='/careers' className='btn btn-primary text-lg px-8 py-3'>
