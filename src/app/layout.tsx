@@ -49,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href='/oak-brook' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Oak Brook page'>Oak Brook</a>
               <a href='/ohare' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label="O'Hare page">O&#39;Hare</a>
               <a href='/fleet' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Fleet page'>Fleet</a>
+              <a href='/about' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='About page'>About</a>
               <a href='/rates' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Rates page'>Rates</a>
               <a href='/careers' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='Careers page'>Careers</a>
               <a href='/faq' className='hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-purple/60 rounded-md px-1' aria-label='FAQ page'>FAQ</a>
@@ -63,7 +64,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className='container py-10 text-white/70 text-sm grid gap-6 sm:grid-cols-4'>
             <div>
               <div className='font-bold text-white'>Late Night Hero Black Car</div>
-              <p>Syrian-owned • Oak Brook & O&#39;Hare • Chicago.</p>
+              <p>Built from nothing • Syrian-owned • 8 years serving Chicago</p>
+              <p className='mt-1'><a href='/about' className='underline hover:text-white'>About Nur Allababidi</a></p>
             </div>
             <div>
               <div className='font-semibold text-white'>Contact</div>
@@ -75,11 +77,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className='font-semibold text-white'>Join Our Team</div>
               <p><a href='/careers' className='underline hover:text-white'>Driver opportunities</a></p>
               <p>Night shifts available</p>
-              <p>Chicago area expansion</p>
+              <p>Ford Expedition SUVs coming</p>
             </div>
             <div>
-              <div className='font-semibold text-white'>Insurance & Safety</div>
-              <p>Commercially insured vehicles. Professional, vetted drivers. Live ETA tracking via SMS link.</p>
+              <div className='font-semibold text-white'>Our Promise</div>
+              <p>2000+ happy customers. Commercially insured. Professional drivers. Live tracking.</p>
             </div>
           </div>
           <div className='container py-6 small'>© {new Date().getFullYear()} Late Night Hero. All rights reserved.</div>

@@ -10,8 +10,8 @@ export default function Page() {
           <div>
             <h1 className='h1'>Late Night Hero Black Car</h1>
             <p className='mt-4 text-lg text-white/80'>
-              Syrian-owned luxury taxi & black car serving <strong>Oak Brook</strong>, <strong>O&#39;Hare</strong>, and greater Chicago.
-              24/7 dispatch • Commercially insured • Professional, vetted drivers.
+              <strong>Built from nothing.</strong> Syrian-owned luxury taxi & black car serving <strong>Oak Brook</strong>, <strong>O&#39;Hare</strong>, and greater Chicago.
+              8 years of business • 2000+ happy customers • Professional, vetted drivers.
             </p>
             <div className='mt-6 flex gap-3'>
               <a href='#book' className='btn btn-primary' aria-label='Book now'>Book Now</a>
@@ -49,10 +49,10 @@ export default function Page() {
               <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
             </div>
           </Link>
-          <Link href='/fleet/suv' className='card p-5 hover:scale-105 transition-transform group'>
-            <div className='h3 mb-1'>Black SUV</div>
-            <div className='small'>Up to 6 passengers • Extra luggage</div>
-            <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
+          <Link href='/fleet/suv' className='card p-5 hover:scale-105 transition-transform group border-yellow-500/30'>
+            <div className='h3 mb-1'>Ford Expedition SUV</div>
+            <div className='small'>Black SUV available soon • Up to 6 passengers</div>
+            <div className='text-xs text-yellow-400 mt-2'>Coming Soon →</div>
           </Link>
           <Link href='/fleet/meet-greet' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
             <div className='relative h-40 bg-gradient-to-br from-gray-800 to-gray-900'>
