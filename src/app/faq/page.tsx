@@ -27,7 +27,7 @@ export default function FAQPage(){
             <div className='card p-6'>
               <h3 className='h3 mb-3'>How do I book a ride?</h3>
               <p className='text-white/90'>
-                Call or text (773) 430-8011, email nurallababidi@gmail.com, or WhatsApp us. We prefer personal contact over apps and provide instant quotes.
+                Call or text (773) 641-9702, email nurallababidi@gmail.com, or WhatsApp us. We prefer personal contact over apps and provide instant quotes.
               </p>
             </div>
             <div className='card p-6'>
@@ -62,7 +62,7 @@ export default function FAQPage(){
             <h2 className='h2 mb-4'>Questions? Call Anytime!</h2>
             <p className='text-white/80 mb-6'>Built from nothing • 8 years of service • 2000+ happy customers</p>
             <div className='flex flex-wrap justify-center gap-4'>
-              <a href='tel:+17734308011' className='btn btn-primary'>Call (773) 430-8011</a>
+              <a href='tel:+17736419702' className='btn btn-primary'>Call (773) 641-9702</a>
               <a href='/about' className='btn btn-outline'>Learn Our Story</a>
             </div>
           </div>

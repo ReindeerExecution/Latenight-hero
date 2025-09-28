@@ -209,7 +209,7 @@ ${sedanPricing}
 ${suvPricing}
 
 🔥 **WANT EHAB?** He's got that 30% discount and VIP service!
-📞 **Book Now:** (630) 400-5218
+📞 **Book Now:** (773) 641-9702
 📧 **Email:** defcon5ready@gmail.com
 
 Which vehicle do you prefer? 🚀`
@@ -253,7 +253,7 @@ ${suvPricing}
 
 🎯 **Pro tip:** Ehab can do this ride with 30% off! He's the most popular driver in the USA for a reason! 
 
-📞 **Book with Ehab:** Text/Call (630) 400-5218
+📞 **Book with Ehab:** Text/Call (773) 920-0030
 💎 **Regular booking:** defcon5ready@gmail.com
 
 Want me to calculate from a specific address? Just say "from [your address] to ${destination}"!`
@@ -286,7 +286,7 @@ Here's why everyone wants Ehab:
 ⭐ Perfect 5-star ratings
 
 � **Book Ehab RIGHT NOW:**
-- Text/Call: **(630) 400-5218**
+- Text/Call: **(773) 920-0030** (Ehab Direct)
 - Email: **defcon5ready@gmail.com**
 - Mention: "I want Ehab with 30% off"
 
@@ -310,7 +310,7 @@ Where you headed? 🚗`
 
 **Need space?** Ford Expedition SUV has premium comfort but includes 25% surcharge for luxury service.
 
-📞 **Get Ehab:** (630) 400-5218
+📞 **Get Ehab:** (773) 920-0030
 
 What's your destination? I'll calculate both sedan and SUV pricing! 💰`
     }

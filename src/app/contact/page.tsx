@@ -23,8 +23,8 @@ export default function ContactPage() {
           <div className='grid gap-8 md:grid-cols-3 mb-16'>
             <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 text-center shadow-lg border border-purple-400/30'>
               <h2 className='h3 mb-4 text-white'>24/7 Dispatch</h2>
-              <a href='tel:+17734308011' className='text-2xl font-bold text-purple-400 hover:text-white transition-colors'>
-                (773) 430-8011
+              <a href='tel:+17736419702' className='text-2xl font-bold text-purple-400 hover:text-white transition-colors'>
+                (773) 641-9702
               </a>
               <p className='text-gray-400 text-sm mt-2'>Call or text anytime</p>
             </div>
@@ -39,7 +39,7 @@ export default function ContactPage() {
             
             <div className='bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 text-center shadow-lg border border-purple-400/30'>
               <h2 className='h3 mb-4 text-white'>WhatsApp</h2>
-              <a href='https://wa.me/17734308011' className='text-lg text-purple-400 hover:text-white transition-colors' target='_blank' rel='noopener noreferrer'>
+              <a href='https://wa.me/17736419702' className='text-lg text-purple-400 hover:text-white transition-colors' target='_blank' rel='noopener noreferrer'>
                 Message Us
               </a>
               <p className='text-gray-400 text-sm mt-2'>Quick booking requests</p>
@@ -55,7 +55,7 @@ export default function ContactPage() {
               <Link href='/careers' className='bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg'>
                 Apply Now
               </Link>
-              <a href='tel:+17734308011' className='bg-gray-700 hover:bg-gray-600 border border-purple-400/30 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg'>
+              <a href='tel:+17736419702' className='bg-gray-700 hover:bg-gray-600 border border-purple-400/30 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg'>
                 Call to Discuss
               </a>
             </div>

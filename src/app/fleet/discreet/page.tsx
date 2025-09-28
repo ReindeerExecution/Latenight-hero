@@ -133,7 +133,7 @@ export default function DiscreetService() {
                     </div>
                     <div>
                       <div className='text-white font-medium'>Phone</div>
-                      <div className='text-purple-300'>(630) 400-5218</div>
+                      <div className='text-purple-300'>(773) 920-0030</div>
                     </div>
                   </div>
                   
