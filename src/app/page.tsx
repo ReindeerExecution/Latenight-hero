@@ -1,5 +1,6 @@
 import BookingForm from '@/components/BookingForm'
 import Image from 'next/image'
+import Link from 'next/link'
 export const revalidate = 60
 export default function Page() {
   return (
@@ -37,18 +38,39 @@ export default function Page() {
       <section id='fleet' className='container my-16' aria-label='Fleet'>
         <div className='h2 mb-6'>Our Fleet</div>
         <div className='grid gap-6 sm:grid-cols-3'>
-          <div className='card p-0 overflow-hidden'>
+          <Link href='/fleet/sedan' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
             <div className='relative h-40'>
-              <Image src='/mkz.jpg.png' alt='Black sedan exterior at night' fill className='object-cover' sizes='(max-width: 800px) 100vw, 33vw' />
+              <Image src='/mkz.jpg.png' alt='Black sedan exterior at night' fill className='object-cover group-hover:scale-110 transition-transform duration-300' sizes='(max-width: 800px) 100vw, 33vw' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
             </div>
             <div className='p-5'>
               <div className='h3 mb-1'>Black Sedan</div>
               <div className='small'>2–3 passengers • Business-class comfort</div>
+              <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
             </div>
-          </div>
-          <div className='card p-5'><div className='h3 mb-1'>Black SUV</div><div className='small'>Up to 6 passengers • Extra luggage</div></div>
-          <div className='card p-5'><div className='h3 mb-1'>Airport Meet & Greet</div><div className='small'>Driver with sign • Baggage assistance</div></div>
+          </Link>
+          <Link href='/fleet/suv' className='card p-5 hover:scale-105 transition-transform group'>
+            <div className='h3 mb-1'>Black SUV</div>
+            <div className='small'>Up to 6 passengers • Extra luggage</div>
+            <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
+          </Link>
+          <Link href='/fleet/meet-greet' className='card p-0 overflow-hidden hover:scale-105 transition-transform group'>
+            <div className='relative h-40 bg-gradient-to-br from-gray-800 to-gray-900'>
+              <div className='absolute inset-0 flex items-center justify-center'>
+                <div className='w-16 h-16 bg-brand-purple/20 rounded-full flex items-center justify-center group-hover:bg-brand-purple/30 transition-colors'>
+                  <svg className='w-8 h-8 text-brand-purple' fill='currentColor' viewBox='0 0 20 20'>
+                    <path fillRule='evenodd' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z' clipRule='evenodd' />
+                  </svg>
+                </div>
+              </div>
+              <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
+            </div>
+            <div className='p-5'>
+              <div className='h3 mb-1'>Airport Meet & Greet</div>
+              <div className='small'>Driver with sign • Baggage assistance</div>
+              <div className='text-xs text-brand-purple mt-2'>Learn more →</div>
+            </div>
+          </Link>
         </div>
       </section>
 
